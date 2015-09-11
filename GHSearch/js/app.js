@@ -70,17 +70,22 @@ var GHSearch = (function(window, document) {
           // Listener for repo detail
           $('.repositories__item').on('click', function() {
             var index = $(this).attr('data-index');
-            var _tmpl = $("#detail-template").html();
-            _tmpl = _.template(_tmpl, {"repo": _$repositories[index]});
-            $('#overlay-container').html(_tmpl);
-
-            $('#overlay-container').addClass('overlay-container').removeClass('hide');
-            $('body').addClass('noScroll');
+            
+            displayDetail(index);
           });
 
         } else {
           $('#results-container').html('Sorry no result');
         }
+      },
+
+      displayDetail = function(index) {
+        var _tmpl = $("#detail-template").html();
+        _tmpl = _.template(_tmpl, {"repo": _$repositories[index]});
+        $('#overlay-container').html(_tmpl);
+
+        $('#overlay-container').addClass('overlay-container').removeClass('hide');
+        $('body').addClass('noScroll');
       },
 
       fetchData = function(query) {
