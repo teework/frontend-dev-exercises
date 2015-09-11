@@ -14,8 +14,47 @@
   <script src="js/app.js"></script>
 </head>
 <body>
-  <input id="search" type="text"/>
-  <div id="results-container"></div>
-  <div id="overlay-container"></div>
+
+  <section id="section-form" class="text-center">
+    <div class="search-form">
+      <h1 class="search-form__title">Search Github.com</h1>
+
+      <form>
+        <input name="search" class="search-form__textbox" placeholder="Enter keyword" type="text" id="search" autocomplete="off"><input type="submit" class="search-form__button search-form__button--blue" value="Search">
+      </form>
+    </div>
+  </section>
+
+  <section id="section-results">
+    <div id="results-container">
+      <!-- results template goes here -->
+    </div>
+
+    <div id="overlay-container" class="hide">
+        <!-- detail template goes here -->
+    </div>
+  </section>
+
+  <script type="text/html" id="results-template">
+    <ul class="repositories">
+      <% _.each(repositories,function(repo,index){ %>
+        <li class="repositories__item" data-index=<%= index %>>
+          <p><b>Name:</b> <%= repo.name %></p>
+          <p><b>Owner:</b> <%= repo.owner %></p>
+        </li>
+      <% }) %>
+    </ul>
+  </script>
+
+  <script type="text/html" id="detail-template">
+    <div class="repo-detail center-div">
+      <h1><%= repo.name %></h1>
+      <p><b>Owner:</b> <%= repo.owner %></p>
+      <p><b>Language:</b> <%= repo.language %></p>
+      <p><b>Followers:</b> <%= repo.followers %></p>
+      <p><b>Url:</b> <a href="<%= repo.url %>" target="_blank" title="<%= repo.name %>"><%= repo.url %></a></p>
+      <p><b>Description:</b> <%= repo.description %></p>
+    </div>
+  </script>
 </body>
 </html>

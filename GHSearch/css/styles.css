@@ -1,1 +1,188 @@
 /* normalize.css has been included before this file */
+
+/* Global */
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-weight: 300;
+  color: #666;
+  background-color: #eee;
+  width: 100%;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+  margin:0px;
+  padding:0px;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+p {
+  padding: 10px 0px 0px 0px;
+  margin: 0px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.noScroll {
+    overflow: hidden;
+    position:fixed;
+}
+
+.hide {
+  display: none;
+}
+
+
+
+/* Template structure */
+#section-results {
+  padding-top:80px;
+}
+
+#section-results #results-container {
+  margin:0px auto;
+  width:80%;
+  padding:10px;
+}
+
+.overlay-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .7);
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+
+.center-div {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #f3f2ef;
+  border-radius: 3px;
+
+  width:480px; height:320px; background-color:#fff;
+}
+
+@media only screen
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px) {
+    .center-div {
+      width:320px; height:160px;
+      overflow: scroll;
+    }
+}
+
+/* search-form */
+.search-form {
+
+}
+
+.search-form--pinned {
+  position:fixed; width:100%;
+  padding:20px 0px;
+  background-color:#ccc;
+}
+
+.search-form--pinned h1 {
+  display: none;
+}
+
+.search-form__textbox {
+  width: 50%;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -o-border-radius: 0px;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+
+  -webkit-margin-before:0em;
+  -webkit-margin-after:0em;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;  
+
+  height: 34px;
+  font-weight: normal;  
+  background: #fff;
+  border: solid 1px #ccc;
+  text-indent: 10px;
+}
+
+.search-form__button {
+  -webkit-appearance: none;
+  border: none;
+  text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+  color: #fff;
+  
+  height: 36px;
+  line-height: 36px;
+  vertical-align: top;
+  padding: 0px 20px;
+
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -o-border-radius: 0px;
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.search-form__button--blue {
+  background: -moz-linear-gradient(center top , #92d9ff, #29a2e4) repeat scroll 0 0 transparent;
+  background: -webkit-gradient(linear,0% 0%,0% 100% ,from(#92d9ff),to(#29a2e4)) repeat scroll 0 0 transparent;
+  background: -o-linear-gradient(top, #92d9ff, #29a2e4) repeat scroll 0 0 transparent;
+  background-color: #53c5ea;
+}
+
+/* repositories module */
+.repositories {
+
+}
+
+.repositories__item {
+  padding:0px 10px 10px 10px;
+  margin:0px 0px 10px 0px;
+}
+
+.repositories__item:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.repositories__item:nth-child(even) {background: #ccc}
+.repositories__item:nth-child(odd) {background: #fff}
+
+/* repo-detail module */
+.repo-detail {
+  padding:0px 20px 10px 20px;
+}
+
+.repo-detail__url {
+  text-decoration: none;
+}
